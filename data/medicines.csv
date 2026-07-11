@@ -1,0 +1,101 @@
+Medicine ID,Medicine Name,Category,Manufacturer,Batch Number,Purchase Date,Expiry Date,Quantity,Unit Price,Supplier Name
+MED001,Crocin 650mg (B-1),Analgesics,Sun Pharma,BCH9431,2026-05-17,2026-06-10,453,250.0,Cipla Trade Agency
+MED002,Crocin 650mg (B-2),Analgesics,Alkem Labs,BCH4487,2026-02-09,2026-06-07,156,15.0,Mankind Wholesale Services
+MED003,Dolo 650mg (B-1),Analgesics,Alkem Labs,BCH7996,2026-01-26,2026-05-29,248,25.0,Cipla Trade Agency
+MED004,Dolo 650mg (B-2),Analgesics,Dr. Reddy's,BCH4809,2026-03-26,2026-06-19,178,15.0,Sun Distributors India
+MED005,Combiflam (B-1),Analgesics,Alkem Labs,BCH8040,2026-03-18,2026-05-31,250,180.0,Cipla Trade Agency
+MED006,Combiflam (B-2),Analgesics,Cipla,BCH5356,2026-05-12,2026-06-30,438,320.0,MedPlus Wholesalers
+MED007,Zerodol-SP (B-1),Analgesics,Lupin,BCH6251,2026-01-28,2026-06-27,485,180.0,MedPlus Wholesalers
+MED008,Zerodol-SP (B-2),Analgesics,Alkem Labs,BCH8159,2026-06-04,2026-06-23,16,15.0,Sun Distributors India
+MED009,Meftal-Spas (B-1),Analgesics,Sun Pharma,BCH5440,2026-04-11,2026-05-29,414,45.0,Mankind Wholesale Services
+MED010,Meftal-Spas (B-2),Analgesics,Lupin,BCH6230,2026-04-01,2026-06-13,188,480.0,Sun Distributors India
+MED011,Dynapar AQ (B-1),Analgesics,Lupin,BCH5437,2026-03-23,2026-07-25,212,320.0,Cipla Trade Agency
+MED012,Dynapar AQ (B-2),Analgesics,Mankind Pharma,BCH4941,2026-01-11,2026-07-20,193,120.0,Apollo Pharmacy Distributors
+MED013,Taxim-O 200 (B-1),Antibiotics,Torrent Pharma,BCH2788,2026-03-05,2026-07-29,82,180.0,Mankind Wholesale Services
+MED014,Taxim-O 200 (B-2),Antibiotics,Lupin,BCH7740,2026-05-09,2026-08-09,226,320.0,Apollo Pharmacy Distributors
+MED015,Augmentin 625 Duo (B-1),Antibiotics,Zydus Life,BCH9724,2026-04-26,2026-07-25,498,80.0,Sun Distributors India
+MED016,Augmentin 625 Duo (B-2),Antibiotics,Cipla,BCH2141,2026-06-25,2026-07-13,16,120.0,Mankind Wholesale Services
+MED017,Monocef-O 200 (B-1),Antibiotics,Torrent Pharma,BCH3383,2026-02-22,2026-07-27,322,480.0,Cipla Trade Agency
+MED018,Monocef-O 200 (B-2),Antibiotics,Sun Pharma,BCH7337,2026-03-21,2026-07-26,144,15.0,Apollo Pharmacy Distributors
+MED019,Azithral 500 (B-1),Antibiotics,Dr. Reddy's,BCH6819,2026-06-12,2026-07-29,109,120.0,Cipla Trade Agency
+MED020,Azithral 500 (B-2),Antibiotics,Cipla,BCH6489,2026-01-20,2026-07-14,462,25.0,Mankind Wholesale Services
+MED021,Ciplox 500 (B-1),Antibiotics,Torrent Pharma,BCH7770,2026-01-12,2026-07-18,102,120.0,Sun Distributors India
+MED022,Ciplox 500 (B-2),Antibiotics,Mankind Pharma,BCH8871,2026-05-12,2026-08-07,276,45.0,Mankind Wholesale Services
+MED023,Sporidex 500 (B-1),Antibiotics,Alkem Labs,BCH8161,2026-04-10,2026-08-01,309,25.0,Cipla Trade Agency
+MED024,Sporidex 500 (B-2),Antibiotics,Sun Pharma,BCH2092,2026-03-29,2026-07-24,8,480.0,MedPlus Wholesalers
+MED025,Glycomet GP 1 (B-1),Antidiabetics,Lupin,BCH4403,2026-06-07,2026-08-06,432,180.0,Sun Distributors India
+MED026,Glycomet GP 1 (B-2),Antidiabetics,Mankind Pharma,BCH7503,2026-06-28,2028-01-26,176,25.0,MedPlus Wholesalers
+MED027,Janumet 50/500 (B-1),Antidiabetics,Cipla,BCH6516,2026-04-07,2027-12-06,365,480.0,Apollo Pharmacy Distributors
+MED028,Janumet 50/500 (B-2),Antidiabetics,Alkem Labs,BCH7960,2026-06-21,2028-04-08,350,180.0,Mankind Wholesale Services
+MED029,Galvus Met 50/500 (B-1),Antidiabetics,Lupin,BCH3390,2026-01-31,2027-07-31,118,180.0,MedPlus Wholesalers
+MED030,Galvus Met 50/500 (B-2),Antidiabetics,Zydus Life,BCH9025,2026-04-04,2028-02-02,365,320.0,Sun Distributors India
+MED031,Ryzodeg (B-1),Antidiabetics,Zydus Life,BCH7595,2026-06-12,2028-05-07,174,25.0,Cipla Trade Agency
+MED032,Ryzodeg (B-2),Antidiabetics,Torrent Pharma,BCH1255,2026-04-30,2027-12-10,16,25.0,Sun Distributors India
+MED033,Glucobay 50 (B-1),Antidiabetics,Sun Pharma,BCH1302,2026-01-19,2027-06-09,229,80.0,Apollo Pharmacy Distributors
+MED034,Glucobay 50 (B-2),Antidiabetics,Sun Pharma,BCH1780,2026-04-22,2027-10-21,167,250.0,Apollo Pharmacy Distributors
+MED035,Teneliglide 20mg (B-1),Antidiabetics,Alkem Labs,BCH1759,2026-02-05,2027-11-02,294,15.0,Cipla Trade Agency
+MED036,Teneliglide 20mg (B-2),Antidiabetics,Zydus Life,BCH7613,2026-04-15,2027-10-11,410,120.0,Cipla Trade Agency
+MED037,Telma 40 (B-1),Antihypertensives,Zydus Life,BCH6022,2026-05-02,2028-02-13,405,320.0,Cipla Trade Agency
+MED038,Telma 40 (B-2),Antihypertensives,Alkem Labs,BCH3895,2026-03-25,2028-03-23,495,45.0,Mankind Wholesale Services
+MED039,Amlokind 5 (B-1),Antihypertensives,Zydus Life,BCH2855,2026-01-19,2027-11-14,108,180.0,Mankind Wholesale Services
+MED040,Amlokind 5 (B-2),Antihypertensives,Sun Pharma,BCH6684,2026-04-08,2027-11-03,18,250.0,Mankind Wholesale Services
+MED041,Cilacar 10 (B-1),Antihypertensives,Mankind Pharma,BCH3537,2026-02-26,2027-08-10,279,120.0,Apollo Pharmacy Distributors
+MED042,Cilacar 10 (B-2),Antihypertensives,Sun Pharma,BCH6820,2026-05-18,2028-03-13,207,45.0,Cipla Trade Agency
+MED043,Concor 5 (B-1),Antihypertensives,Mankind Pharma,BCH7719,2026-03-01,2027-03-14,326,480.0,Sun Distributors India
+MED044,Concor 5 (B-2),Antihypertensives,Dr. Reddy's,BCH9473,2026-02-09,2027-06-21,245,45.0,Mankind Wholesale Services
+MED045,Minipress XL (B-1),Antihypertensives,Lupin,BCH9011,2026-04-06,2028-03-15,90,45.0,Sun Distributors India
+MED046,Minipress XL (B-2),Antihypertensives,Alkem Labs,BCH9981,2026-04-18,2027-05-21,94,480.0,MedPlus Wholesalers
+MED047,Moxovas 0.2 (B-1),Antihypertensives,Alkem Labs,BCH8308,2026-04-20,2027-11-06,66,120.0,Sun Distributors India
+MED048,Moxovas 0.2 (B-2),Antihypertensives,Dr. Reddy's,BCH6614,2026-06-11,2027-10-28,18,120.0,Mankind Wholesale Services
+MED049,Virovir 400 (B-1),Antivirals,Cipla,BCH7285,2026-05-03,2027-06-19,280,480.0,Mankind Wholesale Services
+MED050,Virovir 400 (B-2),Antivirals,Sun Pharma,BCH8866,2026-05-02,2027-05-04,143,80.0,Sun Distributors India
+MED051,Fabiflu 400 (B-1),Antivirals,Mankind Pharma,BCH8100,2026-04-12,2027-09-03,260,120.0,MedPlus Wholesalers
+MED052,Fabiflu 400 (B-2),Antivirals,Alkem Labs,BCH8303,2026-05-18,2027-11-09,319,320.0,MedPlus Wholesalers
+MED053,Herpex 400 (B-1),Antivirals,Zydus Life,BCH9540,2026-03-01,2027-04-14,195,320.0,Apollo Pharmacy Distributors
+MED054,Herpex 400 (B-2),Antivirals,Cipla,BCH9068,2026-02-21,2028-01-18,419,80.0,Mankind Wholesale Services
+MED055,Entecavir 0.5 (B-1),Antivirals,Sun Pharma,BCH7368,2026-02-17,2027-08-15,332,45.0,MedPlus Wholesalers
+MED056,Entecavir 0.5 (B-2),Antivirals,Alkem Labs,BCH5892,2026-06-05,2028-02-05,10,180.0,Mankind Wholesale Services
+MED057,Viraday (B-1),Antivirals,Dr. Reddy's,BCH3259,2026-04-21,2027-06-06,168,250.0,Cipla Trade Agency
+MED058,Viraday (B-2),Antivirals,Zydus Life,BCH1366,2026-03-09,2027-04-20,410,80.0,Cipla Trade Agency
+MED059,Shelcal 500 (B-1),Vitamins,Torrent Pharma,BCH5751,2026-05-15,2027-05-27,298,320.0,Apollo Pharmacy Distributors
+MED060,Shelcal 500 (B-2),Vitamins,Lupin,BCH3273,2026-02-06,2027-07-03,163,480.0,Cipla Trade Agency
+MED061,Becosules Capsule (B-1),Vitamins,Torrent Pharma,BCH7319,2026-05-26,2028-04-16,310,480.0,Apollo Pharmacy Distributors
+MED062,Becosules Capsule (B-2),Vitamins,Sun Pharma,BCH3822,2026-03-07,2027-07-26,483,250.0,Sun Distributors India
+MED063,Neurobion Forte (B-1),Vitamins,Cipla,BCH4799,2026-04-08,2027-06-06,181,45.0,Mankind Wholesale Services
+MED064,Neurobion Forte (B-2),Vitamins,Torrent Pharma,BCH3609,2026-05-11,2028-03-29,14,320.0,Mankind Wholesale Services
+MED065,Limcee 500mg (B-1),Vitamins,Zydus Life,BCH4487,2026-02-25,2027-12-27,225,15.0,Apollo Pharmacy Distributors
+MED066,Limcee 500mg (B-2),Vitamins,Mankind Pharma,BCH5870,2026-05-05,2027-12-31,51,250.0,Mankind Wholesale Services
+MED067,Evion 400 (B-1),Vitamins,Cipla,BCH1944,2026-06-07,2028-04-23,138,15.0,Mankind Wholesale Services
+MED068,Evion 400 (B-2),Vitamins,Mankind Pharma,BCH9495,2026-04-17,2028-01-27,149,320.0,Sun Distributors India
+MED069,Zincovit (B-1),Vitamins,Cipla,BCH2980,2026-03-15,2027-04-29,337,180.0,Mankind Wholesale Services
+MED070,Zincovit (B-2),Vitamins,Cipla,BCH3045,2026-02-21,2027-07-22,156,80.0,Mankind Wholesale Services
+MED071,Allegra 120 (B-1),Antihistamines,Cipla,BCH7943,2026-03-12,2028-03-01,331,15.0,Cipla Trade Agency
+MED072,Allegra 120 (B-2),Antihistamines,Mankind Pharma,BCH2240,2026-02-28,2027-09-06,12,45.0,Sun Distributors India
+MED073,Avil 25 (B-1),Antihistamines,Alkem Labs,BCH1935,2026-02-28,2027-08-01,454,480.0,Mankind Wholesale Services
+MED074,Avil 25 (B-2),Antihistamines,Dr. Reddy's,BCH2869,2026-02-26,2027-11-08,221,180.0,Mankind Wholesale Services
+MED075,Cetzip (B-1),Antihistamines,Cipla,BCH7861,2026-06-02,2027-11-19,170,250.0,Sun Distributors India
+MED076,Cetzip (B-2),Antihistamines,Lupin,BCH3213,2026-03-15,2027-08-11,217,25.0,Mankind Wholesale Services
+MED077,Okacet (B-1),Antihistamines,Torrent Pharma,BCH3175,2026-02-07,2027-10-16,499,480.0,Cipla Trade Agency
+MED078,Okacet (B-2),Antihistamines,Mankind Pharma,BCH9876,2026-04-12,2027-10-30,296,320.0,Mankind Wholesale Services
+MED079,Montair-LC (B-1),Antihistamines,Zydus Life,BCH8511,2026-04-26,2027-08-20,81,320.0,Apollo Pharmacy Distributors
+MED080,Montair-LC (B-2),Antihistamines,Sun Pharma,BCH5504,2026-03-29,2027-08-13,9,15.0,Cipla Trade Agency
+MED081,Atorva 10 (B-1),Cardiovascular,Dr. Reddy's,BCH8813,2026-06-06,2027-10-17,294,15.0,Mankind Wholesale Services
+MED082,Atorva 10 (B-2),Cardiovascular,Dr. Reddy's,BCH5551,2026-03-03,2027-05-10,390,320.0,MedPlus Wholesalers
+MED083,Rosuvas 10 (B-1),Cardiovascular,Sun Pharma,BCH7369,2026-06-26,2028-02-13,484,45.0,Mankind Wholesale Services
+MED084,Rosuvas 10 (B-2),Cardiovascular,Dr. Reddy's,BCH2701,2026-04-07,2027-10-08,303,320.0,Cipla Trade Agency
+MED085,Clopilet 75 (B-1),Cardiovascular,Dr. Reddy's,BCH2498,2026-01-13,2027-03-25,397,180.0,MedPlus Wholesalers
+MED086,Clopilet 75 (B-2),Cardiovascular,Alkem Labs,BCH5031,2026-02-16,2027-09-03,341,180.0,Cipla Trade Agency
+MED087,Ecospirin 75 (B-1),Cardiovascular,Dr. Reddy's,BCH9553,2026-01-11,2027-04-09,92,80.0,Apollo Pharmacy Distributors
+MED088,Ecospirin 75 (B-2),Cardiovascular,Alkem Labs,BCH5500,2026-03-01,2027-08-05,18,45.0,Apollo Pharmacy Distributors
+MED089,Cardace 5 (B-1),Cardiovascular,Alkem Labs,BCH2970,2026-05-24,2027-08-31,287,120.0,MedPlus Wholesalers
+MED090,Cardace 5 (B-2),Cardiovascular,Cipla,BCH2620,2026-03-13,2027-05-30,232,250.0,Cipla Trade Agency
+MED091,Lipvas 20 (B-1),Cardiovascular,Lupin,BCH6721,2026-05-12,2027-11-15,68,320.0,Cipla Trade Agency
+MED092,Lipvas 20 (B-2),Cardiovascular,Cipla,BCH3605,2026-03-16,2027-10-18,290,120.0,Cipla Trade Agency
+MED093,Zerodol-SP Extra,Analgesics,Alkem Labs,BCH2703,2026-05-28,2028-03-09,165,100.0,Mankind Wholesale Services
+MED094,Avil 25 Extra,Antihistamines,Mankind Pharma,BCH5493,2026-03-31,2028-01-20,151,50.0,Apollo Pharmacy Distributors
+MED095,Cilacar 10 Extra,Antihypertensives,Sun Pharma,BCH2723,2026-02-14,2027-09-21,241,50.0,MedPlus Wholesalers
+MED096,Clopilet 75 Extra,Cardiovascular,Zydus Life,BCH7715,2026-02-22,2027-04-01,82,100.0,Apollo Pharmacy Distributors
+MED097,Entecavir 0.5 Extra,Antivirals,Alkem Labs,BCH9664,2026-04-03,2027-06-09,222,100.0,MedPlus Wholesalers
+MED098,Crocin 650mg Extra,Analgesics,Sun Pharma,BCH7923,2026-06-11,2027-06-16,190,50.0,Apollo Pharmacy Distributors
+MED099,Viraday Extra,Antivirals,Zydus Life,BCH7209,2026-04-02,2027-07-18,175,100.0,Cipla Trade Agency
+MED100,Avil 25 Extra,Antihistamines,Mankind Pharma,BCH1286,2026-03-11,2027-11-17,224,100.0,Apollo Pharmacy Distributors

@@ -1,0 +1,197 @@
+/* MediFlow IMS Modern UI Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Main App Background and Text */
+.stApp {
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Sidebar Styling */
+section[data-testid="stSidebar"] {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--sidebar-text) !important;
+    border-right: 1px solid var(--sidebar-border) !important;
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: var(--hr-color) !important;
+}
+
+/* Glassmorphism Metric Cards */
+.kpi-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.kpi-card {
+    flex: 1 1 calc(25% - 1.25rem);
+    min-width: 220px;
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border) !important;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-primary) !important;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.15);
+    border-color: rgba(13, 148, 136, 0.4) !important;
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--accent-color, #0d9488);
+}
+
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.kpi-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.kpi-value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+    line-height: 1;
+}
+
+.kpi-footer {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.kpi-footer.positive {
+    color: #10b981;
+}
+
+.kpi-footer.negative {
+    color: #ef4444;
+}
+
+.kpi-icon {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Custom Warning/Status Badges */
+.badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-success {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.badge-warning {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+}
+
+.badge-danger {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+/* Main Layout adjustments */
+.main .block-container {
+    padding-top: 2rem;
+    max-width: 1400px;
+}
+
+/* Buttons style override if needed */
+div.stButton > button {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+div.stButton > button:hover {
+    border-color: #0d9488;
+    color: #0d9488;
+}
+
+/* Highlighted Warning Box */
+.warning-box {
+    background: rgba(239, 68, 68, 0.08);
+    border-left: 4px solid #ef4444;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 1rem;
+}
+
+.warning-title {
+    font-weight: 600;
+    color: #b91c1c;
+    margin-bottom: 0.25rem;
+}
+
+.warning-desc {
+    font-size: 0.875rem;
+    color: #7f1d1d;
+}
+
+/* Sidebar Text Color Override for light mode visibility */
+section[data-testid="stSidebar"] span, 
+section[data-testid="stSidebar"] p, 
+section[data-testid="stSidebar"] a {
+    color: var(--sidebar-text) !important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] h4 {
+    color: var(--sidebar-text);
+}
+
+/* Transparent Header to prevent black overlay on top of sidebar logo */
+header[data-testid="stHeader"] {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+header[data-testid="stHeader"] button, header[data-testid="stHeader"] a {
+    color: var(--text-primary) !important;
+}
