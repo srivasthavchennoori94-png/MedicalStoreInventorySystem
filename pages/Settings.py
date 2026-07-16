@@ -73,7 +73,6 @@ with tab2:
             with st.spinner("Rebuilding database records..."):
                 if reset_database():
                     st.success("✅ Database reset complete. Streamlit application will now refresh!")
-                    st.balloons()
                     st.rerun()
                 else:
                     st.error("❌ Database reset failed. Verify file system write permissions.")

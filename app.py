@@ -135,49 +135,46 @@ else:
         auth_mode = st.tabs(["🔑 Sign In", "📝 Create Account"])
         
         with auth_mode[0]:
-            st.markdown("<div style='background: var(--card-bg); border: 1px solid var(--card-border); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);'>", unsafe_allow_html=True)
-            st.markdown("<h3 style='margin-top:0;'>Sign In to your Account</h3>", unsafe_allow_html=True)
-            
-            login_username = st.text_input("Username", key="login_username", placeholder="Enter username").strip()
-            login_password = st.text_input("Password", type="password", key="login_password", placeholder="Enter password")
-            
-            st.markdown("<div style='margin-top: 25px;'></div>", unsafe_allow_html=True)
-            if st.button("Sign In", type="primary", use_container_width=True):
-                if not login_username or not login_password:
-                    st.error("Please fill in all fields.")
-                elif authenticate_user(login_username, login_password):
-                    st.session_state.authenticated = True
-                    st.session_state.username = login_username
-                    st.toast("Successfully signed in!")
-                    st.rerun()
-                else:
-                    st.error("Invalid Username or Password.")
-            st.markdown("</div>", unsafe_allow_html=True)
+            with st.container(border=True):
+                st.markdown("<h3 style='margin-top:0;'>Sign In to your Account</h3>", unsafe_allow_html=True)
+                
+                login_username = st.text_input("Username", key="login_username", placeholder="Enter username").strip()
+                login_password = st.text_input("Password", type="password", key="login_password", placeholder="Enter password")
+                
+                st.markdown("<div style='margin-top: 25px;'></div>", unsafe_allow_html=True)
+                if st.button("Sign In", type="primary", use_container_width=True):
+                    if not login_username or not login_password:
+                        st.error("Please fill in all fields.")
+                    elif authenticate_user(login_username, login_password):
+                        st.session_state.authenticated = True
+                        st.session_state.username = login_username
+                        st.toast("Successfully signed in!")
+                        st.rerun()
+                    else:
+                        st.error("Invalid Username or Password.")
             
         with auth_mode[1]:
-            st.markdown("<div style='background: var(--card-bg); border: 1px solid var(--card-border); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);'>", unsafe_allow_html=True)
-            st.markdown("<h3 style='margin-top:0;'>Register New Account</h3>", unsafe_allow_html=True)
-            
-            signup_username = st.text_input("Username", key="signup_username", placeholder="Choose a username").strip()
-            signup_email = st.text_input("Email Address", key="signup_email", placeholder="Enter email address").strip()
-            signup_password = st.text_input("Password", type="password", key="signup_password", placeholder="Choose password")
-            signup_confirm = st.text_input("Confirm Password", type="password", key="signup_confirm", placeholder="Confirm your password")
-            
-            st.markdown("<div style='margin-top: 25px;'></div>", unsafe_allow_html=True)
-            if st.button("Register & Create Account", type="primary", use_container_width=True):
-                if not signup_username or not signup_email or not signup_password or not signup_confirm:
-                    st.error("Please fill in all fields.")
-                elif signup_password != signup_confirm:
-                    st.error("Passwords do not match!")
-                elif len(signup_password) < 6:
-                    st.error("Password must be at least 6 characters long.")
-                elif "@" not in signup_email or "." not in signup_email:
-                    st.error("Please enter a valid email address.")
-                else:
-                    success, msg = register_user(signup_username, signup_password, signup_email)
-                    if success:
-                        st.success(msg)
-                        st.balloons()
+            with st.container(border=True):
+                st.markdown("<h3 style='margin-top:0;'>Register New Account</h3>", unsafe_allow_html=True)
+                
+                signup_username = st.text_input("Username", key="signup_username", placeholder="Choose a username").strip()
+                signup_email = st.text_input("Email Address", key="signup_email", placeholder="Enter email address").strip()
+                signup_password = st.text_input("Password", type="password", key="signup_password", placeholder="Choose password")
+                signup_confirm = st.text_input("Confirm Password", type="password", key="signup_confirm", placeholder="Confirm your password")
+                
+                st.markdown("<div style='margin-top: 25px;'></div>", unsafe_allow_html=True)
+                if st.button("Register & Create Account", type="primary", use_container_width=True):
+                    if not signup_username or not signup_email or not signup_password or not signup_confirm:
+                        st.error("Please fill in all fields.")
+                    elif signup_password != signup_confirm:
+                        st.error("Passwords do not match!")
+                    elif len(signup_password) < 6:
+                        st.error("Password must be at least 6 characters long.")
+                    elif "@" not in signup_email or "." not in signup_email:
+                        st.error("Please enter a valid email address.")
                     else:
-                        st.error(msg)
-            st.markdown("</div>", unsafe_allow_html=True)
+                        success, msg = register_user(signup_username, signup_password, signup_email)
+                        if success:
+                            st.success(msg)
+                        else:
+                            st.error(msg)

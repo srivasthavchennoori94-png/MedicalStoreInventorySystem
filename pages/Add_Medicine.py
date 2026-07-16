@@ -80,8 +80,6 @@ if submit_button:
         success = add_medicine(medicine_data)
         if success:
             st.success(f"✅ Medicine '{medicine_data['Medicine Name']}' added successfully with ID '{medicine_data['Medicine ID']}'!")
-            # Trigger Streamlit toast/alert if supported or just notification
-            st.balloons()
         else:
             st.error("❌ Failed to save record. Please check file write permissions or if the Medicine ID was duplicated.")
     else:
