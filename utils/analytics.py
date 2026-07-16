@@ -60,13 +60,13 @@ def get_kpi_metrics() -> Dict[str, Any]:
     }
 
 def get_recent_medicines(limit: int = 5) -> pd.DataFrame:
-    """Returns the most recently purchased medicines."""
+    """Returns the most recently added medicines."""
     df = load_medicines()
     if df.empty:
         return df
         
-    # Sort by Purchase Date descending
-    df_sorted = df.sort_values(by="Purchase Date", ascending=False)
+    # Reverse rows so that the latest appended records appear first
+    df_sorted = df.iloc[::-1]
     return df_sorted.head(limit)[["Medicine ID", "Medicine Name", "Category", "Quantity", "Unit Price", "Purchase Date"]]
 
 def get_top_selling_medicines(limit: int = 5) -> pd.DataFrame:

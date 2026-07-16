@@ -94,3 +94,22 @@ This will automatically launch the browser and display the **MediFlow IMS Dashbo
 - **Flat File DB**: Point out that the system operates completely offline without external DB services (like SQLite or MySQL), making it highly portable and simple to deploy for mini-projects.
 - **Mock Reset**: If you run out of sample stock or mess up during live demonstrations, go to **System Settings** > **Database Administration**, check the confirmation box, and click **Reset Database**. This rebuilds 100 fresh realistic medical records (with expired/low-stock/sales history) instantly.
 - **Validation Layers**: Walk the examiner through `utils/validations.py` to show code quality standards.
+
+---
+
+## 📝 Sample Data for Testing (Add Medicine)
+
+You can copy and paste the following sample records into the **Add Medicine** form to demonstrate the dynamic inventory flow:
+
+| Field | Sample 1 (Antibiotics) | Sample 2 (Antidiabetics) | Sample 3 (Analgesics) |
+| :--- | :--- | :--- | :--- |
+| **Medicine ID** | `MED101` | `MED102` | `MED103` |
+| **Medicine Name** | `Amoxicillin 500mg` | `Metformin HCl 850mg` | `Ibuprofen 400mg` |
+| **Category** | `Antibiotics` | `Antidiabetics` | `Analgesics` |
+| **Manufacturer** | `GlaxoSmithKline` | `Merck & Co.` | `Abbott Laboratories` |
+| **Batch Number** | `BCH9821` | `BCH4509` | `BCH7712` |
+| **Purchase Date** | `2026-07-16` | `2026-07-10` | `2026-07-15` |
+| **Expiry Date** | `2027-10-15` | `2028-06-30` | `2027-12-31` |
+| **Stock Quantity**| `150` | `300` | `200` |
+| **Unit Price (₹)**| `45.00` | `12.50` | `25.00` |
+| **Supplier Name** | `Apollo Pharmacy Distributors` | `MedPlus Wholesalers` | `Cipla Trade Agency` |

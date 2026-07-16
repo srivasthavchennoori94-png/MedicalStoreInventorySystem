@@ -3,7 +3,7 @@ import datetime
 import pandas as pd
 from utils.file_handler import load_medicines, update_medicine, delete_medicine, load_suppliers
 from utils.validations import validate_medicine
-from utils.helper import format_currency
+from utils.helper import format_currency, render_styled_table
 
 st.title("📋 View & Manage Medicines")
 st.markdown("Search, sort, filter, update or delete medicine records from the inventory database.")
@@ -94,14 +94,7 @@ else:
         
         # Display Table
         st.markdown(f"**Showing {len(filtered_df)} matches**")
-        st.dataframe(
-            filtered_df.style.format({
-                "Unit Price": lambda x: f"₹{x:.2f}",
-                "Quantity": lambda x: f"{x:,} units"
-            }),
-            use_container_width=True,
-            hide_index=True
-        )
+        st.markdown(render_styled_table(filtered_df), unsafe_allow_html=True)
         
     with tab2:
         st.subheader("📝 Edit or Delete Selected Medicine")

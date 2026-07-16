@@ -2,6 +2,7 @@ import streamlit as st
 import datetime
 import pandas as pd
 from utils.file_handler import load_medicines
+from utils.helper import render_styled_table
 
 st.title("⏳ Expiry & Compliance Tracker")
 st.markdown("Track and filter medicines that have expired or are expiring within the next 30 days to ensure safety compliance.")
@@ -45,14 +46,7 @@ else:
     with tab1:
         st.subheader("Expired Medicines list")
         if not expired_df.empty:
-            st.dataframe(
-                expired_df.style.format({
-                    "Unit Price": lambda x: f"₹{x:.2f}",
-                    "Quantity": lambda x: f"{x:,} units"
-                }),
-                use_container_width=True,
-                hide_index=True
-            )
+            st.markdown(render_styled_table(expired_df), unsafe_allow_html=True)
             
             # Export to CSV
             csv_expired = expired_df.to_csv(index=False)
@@ -68,14 +62,7 @@ else:
     with tab2:
         st.subheader("Medicines Expiring within 30 Days")
         if not expiring_soon_df.empty:
-            st.dataframe(
-                expiring_soon_df.style.format({
-                    "Unit Price": lambda x: f"₹{x:.2f}",
-                    "Quantity": lambda x: f"{x:,} units"
-                }),
-                use_container_width=True,
-                hide_index=True
-            )
+            st.markdown(render_styled_table(expiring_soon_df), unsafe_allow_html=True)
             
             # Export to CSV
             csv_expiring = expiring_soon_df.to_csv(index=False)

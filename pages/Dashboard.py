@@ -3,7 +3,7 @@ import datetime
 from utils.analytics import get_kpi_metrics, get_recent_medicines
 from utils.charts import plot_category_distribution, plot_stock_by_category, plot_sales_trend
 from utils.file_handler import load_medicines, load_sales
-from utils.helper import render_metric_card, format_currency
+from utils.helper import render_metric_card, format_currency, render_styled_table
 
 # Page Title
 st.title("📊 Pharmacy Dashboard")
@@ -76,21 +76,21 @@ chart_col1, chart_col2 = st.columns(2)
 with chart_col1:
     fig_sales = plot_sales_trend(df_sales)
     if fig_sales:
-        st.plotly_chart(fig_sales, use_container_width=True)
+        st.plotly_chart(fig_sales, use_container_width=True, theme=None)
     else:
         st.info("No transaction data available to plot sales trend.")
 
 with chart_col2:
     fig_cat = plot_category_distribution(df_meds)
     if fig_cat:
-        st.plotly_chart(fig_cat, use_container_width=True)
+        st.plotly_chart(fig_cat, use_container_width=True, theme=None)
     else:
         st.info("No medicine data available to plot categories.")
 
 # Row of category stock volumes
 fig_stock = plot_stock_by_category(df_meds)
 if fig_stock:
-    st.plotly_chart(fig_stock, use_container_width=True)
+    st.plotly_chart(fig_stock, use_container_width=True, theme=None)
 
 st.markdown("---")
 
@@ -99,14 +99,6 @@ st.markdown("### 🆕 Recently Added Medicines")
 df_recent = get_recent_medicines(5)
 
 if not df_recent.empty:
-    # Stylize recent dataframe presentation
-    st.dataframe(
-        df_recent.style.format({
-            "Unit Price": lambda x: f"₹{x:.2f}",
-            "Quantity": lambda x: f"{x:,} units"
-        }),
-        use_container_width=True,
-        hide_index=True
-    )
+    st.markdown(render_styled_table(df_recent), unsafe_allow_html=True)
 else:
     st.info("No medicine inventory records found.")

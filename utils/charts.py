@@ -4,6 +4,20 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import datetime
 from typing import Optional
+import streamlit as st
+
+def get_chart_theme():
+    """Returns the text color and grid line color based on the current streamlit theme."""
+    try:
+        theme = st.session_state.get("theme", "dark")
+    except Exception:
+        theme = "dark"
+        
+    if theme == "dark":
+        return "#f8fafc", "rgba(255, 255, 255, 0.1)"
+    else:
+        return "#0f172a", "rgba(15, 23, 42, 0.1)"
+
 
 def plot_category_distribution(df: pd.DataFrame) -> Optional[go.Figure]:
     """Generates a Plotly Donut Chart for medicine category distribution."""
@@ -27,12 +41,13 @@ def plot_category_distribution(df: pd.DataFrame) -> Optional[go.Figure]:
         textinfo='percent+label',
         domain=dict(x=[0.15, 0.85], y=[0.15, 0.85])
     )
+    text_color, grid_color = get_chart_theme()
     fig.update_layout(
-        margin=dict(t=40, b=0, l=0, r=0),
-        legend=dict(orientation="h", yanchor="bottom", y=-0.1, xanchor="center", x=0.5),
+        margin=dict(t=50, b=60, l=20, r=20),
+        legend=dict(orientation="h", yanchor="top", y=-0.05, xanchor="center", x=0.5),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(family="Outfit, sans-serif", size=12)
+        font=dict(family="Outfit, sans-serif", size=12, color=text_color)
     )
     return fig
 
@@ -55,14 +70,15 @@ def plot_stock_by_category(df: pd.DataFrame) -> Optional[go.Figure]:
         labels={"Quantity": "Total Stock Qty"}
     )
     
+    text_color, grid_color = get_chart_theme()
     fig.update_layout(
-        margin=dict(t=40, b=10, l=10, r=10),
+        margin=dict(t=50, b=50, l=140, r=20),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(family="Outfit, sans-serif", size=12),
+        font=dict(family="Outfit, sans-serif", size=12, color=text_color),
         coloraxis_showscale=False
     )
-    fig.update_xaxes(showgrid=True, gridcolor="rgba(200,200,200,0.2)")
+    fig.update_xaxes(showgrid=True, gridcolor=grid_color)
     fig.update_yaxes(showgrid=False)
     return fig
 
@@ -90,14 +106,15 @@ def plot_sales_trend(df_sales: pd.DataFrame) -> Optional[go.Figure]:
         fillcolor='rgba(13, 148, 136, 0.15)'
     )
     
+    text_color, grid_color = get_chart_theme()
     fig.update_layout(
-        margin=dict(t=40, b=10, l=10, r=10),
+        margin=dict(t=50, b=50, l=80, r=20),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(family="Outfit, sans-serif", size=12)
+        font=dict(family="Outfit, sans-serif", size=12, color=text_color)
     )
-    fig.update_xaxes(showgrid=True, gridcolor="rgba(200,200,200,0.2)")
-    fig.update_yaxes(showgrid=True, gridcolor="rgba(200,200,200,0.2)")
+    fig.update_xaxes(showgrid=True, gridcolor=grid_color)
+    fig.update_yaxes(showgrid=True, gridcolor=grid_color)
     return fig
 
 def plot_top_selling(df_sales: pd.DataFrame) -> Optional[go.Figure]:
@@ -118,14 +135,15 @@ def plot_top_selling(df_sales: pd.DataFrame) -> Optional[go.Figure]:
         title="Top Selling Medicines (Units Sold)"
     )
     
+    text_color, grid_color = get_chart_theme()
     fig.update_layout(
-        margin=dict(t=40, b=10, l=10, r=10),
+        margin=dict(t=50, b=50, l=160, r=20),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(family="Outfit, sans-serif", size=12),
+        font=dict(family="Outfit, sans-serif", size=12, color=text_color),
         coloraxis_showscale=False
     )
-    fig.update_xaxes(showgrid=True, gridcolor="rgba(200,200,200,0.2)")
+    fig.update_xaxes(showgrid=True, gridcolor=grid_color)
     fig.update_yaxes(autorange="reversed")
     return fig
 
@@ -176,12 +194,13 @@ def plot_expiry_status_pie(df_meds: pd.DataFrame) -> Optional[go.Figure]:
         domain=dict(x=[0.15, 0.85], y=[0.15, 0.85])
     )
     
+    text_color, grid_color = get_chart_theme()
     fig.update_layout(
-        margin=dict(t=40, b=0, l=0, r=0),
-        legend=dict(orientation="h", yanchor="bottom", y=-0.1, xanchor="center", x=0.5),
+        margin=dict(t=50, b=60, l=20, r=20),
+        legend=dict(orientation="h", yanchor="top", y=-0.05, xanchor="center", x=0.5),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(family="Outfit, sans-serif", size=12)
+        font=dict(family="Outfit, sans-serif", size=12, color=text_color)
     )
     return fig
 
@@ -207,11 +226,11 @@ def plot_low_stock_chart(df_meds: pd.DataFrame) -> Optional[go.Figure]:
     fig.add_hline(y=20, line_dash="dash", line_color="orange", annotation_text="Low Stock Threshold (20)")
     
     fig.update_layout(
-        margin=dict(t=40, b=10, l=10, r=10),
+        margin=dict(t=50, b=50, l=60, r=20),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        font=dict(family="Outfit, sans-serif", size=12),
+        font=dict(family="Outfit, sans-serif", size=12, color=text_color),
         coloraxis_showscale=False
     )
-    fig.update_yaxes(showgrid=True, gridcolor="rgba(200,200,200,0.2)")
+    fig.update_yaxes(showgrid=True, gridcolor=grid_color)
     return fig

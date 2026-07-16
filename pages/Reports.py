@@ -2,6 +2,7 @@ import streamlit as st
 import datetime
 import pandas as pd
 from utils.file_handler import load_medicines, load_sales
+from utils.helper import render_styled_table
 
 st.title("📈 Reports Generator")
 st.markdown("Compile, preview, and download custom Excel-compatible CSV reports for compliance and auditing.")
@@ -100,11 +101,7 @@ else:
     if "Total_Inventory_Value" in report_df.columns:
         format_rules["Total_Inventory_Value"] = lambda x: f"₹{x:.2f}"
         
-    st.dataframe(
-        report_df.style.format(format_rules),
-        use_container_width=True,
-        hide_index=True
-    )
+    st.markdown(render_styled_table(report_df), unsafe_allow_html=True)
     
     # Download button
     csv = report_df.to_csv(index=False)

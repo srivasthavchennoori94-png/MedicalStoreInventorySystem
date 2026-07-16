@@ -10,6 +10,12 @@ html, body, [class*="css"] {
 .stApp {
     background-color: var(--bg-color) !important;
     color: var(--text-primary) !important;
+    
+    /* Override Streamlit core context variables for all descendant widgets, dropdowns, and tables */
+    --background-color: var(--bg-color);
+    --secondary-background-color: var(--card-bg);
+    --text-color: var(--text-primary);
+    --primary-color: #0d9488;
 }
 
 /* Sidebar Styling */
@@ -141,15 +147,23 @@ section[data-testid="stSidebar"] hr {
 }
 
 /* Buttons style override if needed */
-div.stButton > button {
+div.stButton > button:not([data-testid="stBaseButton-primary"]),
+div.stDownloadButton > button:not([data-testid="stBaseButton-primary"]),
+div.stFormSubmitButton > button:not([data-testid="stBaseButton-primary"]) {
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border: 1px solid var(--input-border) !important;
 }
 
-div.stButton > button:hover {
-    border-color: #0d9488;
-    color: #0d9488;
+div.stButton > button:not([data-testid="stBaseButton-primary"]):hover,
+div.stDownloadButton > button:not([data-testid="stBaseButton-primary"]):hover,
+div.stFormSubmitButton > button:not([data-testid="stBaseButton-primary"]):hover {
+    border-color: var(--accent-color, #0d9488) !important;
+    color: var(--accent-color, #0d9488) !important;
+    background-color: var(--card-bg) !important;
 }
 
 /* Highlighted Warning Box */
@@ -195,3 +209,135 @@ header[data-testid="stHeader"] {
 header[data-testid="stHeader"] button, header[data-testid="stHeader"] a {
     color: var(--text-primary) !important;
 }
+
+/* --- Theme Visibility Styling (Light/Dark Mode compatibility overrides) --- */
+
+/* 1. Main body text elements, headings, paragraphs and lists */
+.main, .main p, .main span, .main li, .main label,
+div[data-testid="stMarkdownContainer"] p,
+div[data-testid="stMarkdownContainer"] span,
+div[data-testid="stMarkdownContainer"] li,
+.main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+    color: var(--text-primary) !important;
+}
+
+/* Accent sub-titles (KPI card titles) */
+.kpi-title {
+    color: var(--text-secondary) !important;
+}
+
+/* 2. Text, number, date inputs and textareas */
+.stTextInput input, .stNumberInput input, .stTextArea textarea, .stDateInput input {
+    color: var(--input-text) !important;
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+}
+
+.stTextInput input::placeholder, .stNumberInput input::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+}
+
+/* 3. Streamlit Selectboxes / Dropdowns */
+div[data-testid="stSelectbox"] [role="combobox"], 
+div[data-testid="stSelectbox"] [role="button"],
+div[data-testid="stSelectbox"] div[data-baseweb="select"] {
+    background-color: var(--input-bg) !important;
+    border-color: var(--input-border) !important;
+    color: var(--input-text) !important;
+}
+
+/* Text elements inside selectboxes */
+div[data-testid="stSelectbox"] div[data-baseweb="select"] * {
+    color: var(--input-text) !important;
+}
+
+/* Selectbox expand indicator arrow icon */
+div[data-testid="stSelectbox"] svg {
+    fill: var(--text-secondary) !important;
+}
+
+/* 4. Dropdown option list popovers */
+div[data-baseweb="popover"], div[data-baseweb="popover"] * {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+}
+
+div[data-baseweb="popover"] li {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    transition: background-color 0.1s ease;
+}
+
+div[data-baseweb="popover"] li:hover,
+div[data-baseweb="popover"] li[aria-selected="true"] {
+    background-color: var(--accent-color, #0d9488) !important;
+    color: #ffffff !important;
+}
+
+/* 5. Calendar Picker styling */
+div[data-baseweb="calendar"] * {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+}
+
+div[data-baseweb="calendar"] [role="gridcell"]:hover {
+    background-color: var(--accent-color, #0d9488) !important;
+    color: #ffffff !important;
+}
+
+/* 6. Widget labels (Titles above form inputs) */
+div[data-testid="stWidgetLabel"] p,
+div[data-testid="stWidgetLabel"] span,
+label[data-testid="stWidgetLabel"] {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+}
+
+/* 7. Streamlit Tabs */
+button[data-baseweb="tab"] {
+    color: var(--text-secondary) !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--text-primary) !important;
+    border-bottom-color: var(--accent-color, #0d9488) !important;
+}
+
+button[data-baseweb="tab"]:hover {
+    color: var(--text-primary) !important;
+}
+
+/* 8. Dataframe table border matching */
+div[data-testid="stDataFrameGrid"] {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--card-border) !important;
+}
+
+div[data-testid="stDataFrameGrid"] * {
+    color: var(--text-primary) !important;
+}
+
+/* Custom Table hover highlights */
+.custom-table-container tr {
+    transition: background-color 0.15s ease;
+}
+.custom-table-container tr:hover {
+    background-color: rgba(13, 148, 136, 0.08) !important;
+}
+
+/* Force Light/Dark Mode toggle switch boundary (track border) to black */
+div[data-baseweb="toggle"] > div:first-of-type,
+button[role="switch"] > div:first-of-type,
+div[data-testid="stCheckbox"] [role="switch"] > div {
+    border: 1.5px solid #000000 !important;
+    border-color: #000000 !important;
+}
+
+div[data-baseweb="toggle"]:hover > div:first-of-type,
+button[role="switch"]:hover > div:first-of-type {
+    border-color: #000000 !important;
+}
+

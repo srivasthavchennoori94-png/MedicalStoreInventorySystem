@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from utils.file_handler import reset_database, load_suppliers, save_suppliers
+from utils.helper import render_styled_table
 
 st.title("⚙️ System Settings & Tools")
 st.markdown("Configure system parameters, manage supplier details, and perform database resets.")
@@ -17,7 +18,7 @@ with tab1:
     with col_s1:
         st.markdown("**Registered Suppliers**")
         if not df_sups.empty:
-            st.dataframe(df_sups, use_container_width=True, hide_index=True)
+            st.markdown(render_styled_table(df_sups), unsafe_allow_html=True)
         else:
             st.info("No suppliers registered.")
             

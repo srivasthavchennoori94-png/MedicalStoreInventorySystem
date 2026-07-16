@@ -25,9 +25,9 @@ def inject_custom_css():
             --input-border: #334155;
             --input-text: #f8fafc;
             
-            --st-background-color: #0b0f19;
-            --st-secondary-background-color: #0f172a;
-            --st-text-color: #f8fafc;
+            --background-color: #0b0f19;
+            --secondary-background-color: #0f172a;
+            --text-color: #f8fafc;
         }
         """
     else:
@@ -46,9 +46,9 @@ def inject_custom_css():
             --input-border: #cbd5e1;
             --input-text: #0f172a;
             
-            --st-background-color: #f8fafc;
-            --st-secondary-background-color: #ffffff;
-            --st-text-color: #0f172a;
+            --background-color: #f8fafc;
+            --secondary-background-color: #ffffff;
+            --text-color: #0f172a;
         }
         """
         
@@ -140,3 +140,62 @@ def render_metric_card(title: str, value: str, icon: str, color: str = "#0d9488"
     </div>
     """
     return html
+
+def render_styled_table(df: pd.DataFrame, max_height: str = "450px") -> str:
+    """Generates a responsive, theme-aware HTML table styled with CSS variables."""
+    if df.empty:
+        return "<div style='color: var(--text-secondary); text-align: center; padding: 20px; font-family: sans-serif;'>No records found.</div>"
+        
+    # Build headers
+    headers = "".join([f"<th style='padding: 12px 16px; text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 2px solid var(--sidebar-border); background-color: var(--sidebar-bg);'>{col}</th>" for col in df.columns])
+    
+    # Build rows
+    rows = []
+    for idx, row in df.iterrows():
+        cells = []
+        for col in df.columns:
+            val = row[col]
+            # Format value
+            if isinstance(val, float):
+                if any(k in col for k in ["Price", "Amount", "Revenue", "Value"]):
+                    val_str = f"₹{val:,.2f}"
+                else:
+                    val_str = f"{val:.2f}"
+            elif isinstance(val, (int, float)) and col == "Quantity":
+                val_str = f"{int(val):,} units"
+            elif isinstance(val, (int, float)) and col == "Quantity Sold":
+                val_str = f"{int(val):,} units"
+            else:
+                val_str = str(val)
+                
+            # Formatting low stock indicators
+            if col == "Quantity":
+                try:
+                    qty = int(row["Quantity"])
+                    if qty < 20:
+                        cells.append(f"<td style='padding: 12px 16px; border-bottom: 1px solid var(--sidebar-border);'><span class='badge badge-danger'>⚠️ {val_str}</span></td>")
+                        continue
+                except Exception:
+                    pass
+            
+            cells.append(f"<td style='padding: 12px 16px; color: var(--text-primary); border-bottom: 1px solid var(--sidebar-border);'>{val_str}</td>")
+        
+        row_html = f"<tr style='background-color: var(--card-bg); transition: background-color 0.2s;'>{''.join(cells)}</tr>"
+        rows.append(row_html)
+        
+    html = f"""
+    <div class="custom-table-container" style="overflow-y: auto; overflow-x: auto; max-height: {max_height}; border: 1px solid var(--sidebar-border); border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Outfit', sans-serif; background-color: var(--bg-color);">
+            <thead>
+                <tr style="position: sticky; top: 0; z-index: 10;">
+                    {headers}
+                </tr>
+            </thead>
+            <tbody>
+                {"".join(rows)}
+            </tbody>
+        </table>
+    </div>
+    """
+    return html
+

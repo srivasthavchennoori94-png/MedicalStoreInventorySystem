@@ -12,3 +12,7 @@ __pycache__/
 # Operating System Files
 .DS_Store
 Thumbs.db
+
+# Local Database Credentials
+data/users.xlsx
+data/users.csv
